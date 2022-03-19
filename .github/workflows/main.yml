@@ -13,5 +13,6 @@ jobs:
     name: Bump Package Version
     runs-on: ubuntu-latest
     steps:
-      - name: Example variable usage
-        run: git tag ${{ github.event.inputs.version }}
+      - run: >
+          echo "User ${{ github.event.inputs.username }} ran a workflow manually."
+          echo "Because ${{ github.event.inputs.reason }}."
