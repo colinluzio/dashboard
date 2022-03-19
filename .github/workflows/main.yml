@@ -1,10 +1,17 @@
+# .github/workflows/example-2.yml
+
+name: Manual Inputs
 on: 
   workflow_dispatch:
     inputs:
-      username:
-        description: 'Your GitHub username'
+      version:
+        description: Bump Version
+        default: v1.0.0
         required: true
-      reason:
-        description: 'Why are you running this workflow manually?'
-        required: true
-        default: 'I am running tests before implementing an automated workflow'
+jobs:
+  bump-version:
+    name: Bump Package Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example variable usage
+        run: git tag ${{ github.event.inputs.version }}
