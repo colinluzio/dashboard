@@ -23,7 +23,7 @@ interface IProps {
 /* 
 Create a root component that receives the store via props
 */
-const Root: React.SFC<IProps> = props => {
+const Root: React.FC<IProps> = props => {
     return (
         <Provider store={props.store}>
             <App />
