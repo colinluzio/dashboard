@@ -29,6 +29,7 @@ export const questionReducer: Reducer<IQuestionState, QuestionActions> = (
                 questions: action.questions
             };
         }
+        break;
         //Add more questions to state
         case QuestionActionTypes.LOAD_MORE: {
             let oldArray = state.questions;
@@ -38,6 +39,7 @@ export const questionReducer: Reducer<IQuestionState, QuestionActions> = (
                 questions: action.questions.concat(oldArray)
             };
         }
+        break;
         //Update single question
         case QuestionActionTypes.UPDATE_QUESTION: {
             let _Array = state.questions;
@@ -53,6 +55,7 @@ export const questionReducer: Reducer<IQuestionState, QuestionActions> = (
                 };
             }
         }
+        break;
         //Delete single question
         case QuestionActionTypes.DELETE_QUESTION: {
             let _Array = state.questions;
@@ -66,6 +69,7 @@ export const questionReducer: Reducer<IQuestionState, QuestionActions> = (
                 };
             }
         }
+        break;
 
         default:
             return state;
